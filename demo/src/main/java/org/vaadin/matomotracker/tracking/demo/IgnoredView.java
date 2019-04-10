@@ -21,6 +21,6 @@ public class IgnoredView extends VerticalLayout
 
     @Override
     public void afterNavigation(AfterNavigationEvent event) {
-        MatomoTracker.getCurrent().sendPageView("custom/location","Custom Title");
+        MatomoTracker.getCurrent().sendPageView("/custom/location","Custom Title");
     }
 }

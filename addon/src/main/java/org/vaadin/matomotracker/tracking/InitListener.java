@@ -18,7 +18,6 @@ package org.vaadin.matomotracker.tracking;
  */
 
 import java.util.List;
-import java.util.Objects;
 
 import com.vaadin.flow.component.HasElement;
 import com.vaadin.flow.component.UI;
@@ -38,7 +37,9 @@ public class InitListener implements VaadinServiceInitListener {
             ui.addAfterNavigationListener(navigationEvent -> {
                 MatomoTracker tracker = MatomoTracker.get(ui);                
                 if (shouldTrack(tracker, navigationEvent)) {
-                    tracker.sendPageView(navigationEvent.getLocation().getPathWithQueryParameters(),navigationEvent.getLocation().getPath());
+                    tracker.sendPageView(
+                            "/" + navigationEvent.getLocation().getPathWithQueryParameters(),
+                            navigationEvent.getLocation().getPath());
                 }
             });
         });
