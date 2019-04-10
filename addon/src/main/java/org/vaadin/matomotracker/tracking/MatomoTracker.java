@@ -192,7 +192,7 @@ public class MatomoTracker {
          */
         if (!pageViewPrefix.isEmpty()) {
             if (action.length == 2 && "setCustomUrl".equals(action[0])) {
-                action[1] = pageViewPrefix + "/" + action[1];
+                action[1] = pageViewPrefix + action[1];
             }
         }
         if (action.length == 1) {
