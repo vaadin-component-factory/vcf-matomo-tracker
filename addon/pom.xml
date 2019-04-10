@@ -55,7 +55,12 @@
           <version>3.1.0</version>
           <scope>provided</scope>
       </dependency>
-
+      <dependency>
+          <groupId>com.vaadin</groupId>
+          <artifactId>license-checker</artifactId>
+          <version>1.0.0</version>
+      </dependency>
+        
         <!-- This can be replaced with TestNG or some other test framework supported by the surefire plugin -->
         <dependency>
             <groupId>junit</groupId>

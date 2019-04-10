@@ -28,7 +28,10 @@ import com.vaadin.flow.component.HasElement;
 import com.vaadin.flow.component.UI;
 import com.vaadin.flow.internal.JsonCodec;
 import com.vaadin.flow.internal.JsonUtils;
+import com.vaadin.flow.internal.UsageStatistics;
+import com.vaadin.flow.server.VaadinServlet;
 import com.vaadin.flow.shared.ui.LoadMode;
+import com.vaadin.pro.licensechecker.LicenseChecker;
 
 import elemental.json.JsonObject;
 
@@ -52,6 +55,9 @@ public class MatomoTracker {
 
     private String pageViewPrefix = "";
 
+    private static String PROJECT_VERSION = "1.0.0";
+    private static String PROJECT_NAME = "vaadin-matomo-tracker"; 
+    
     /**
      * List of actions to send before the next Flow response is created.
      * Initialization can only happen after routing has completed since the
@@ -97,7 +103,16 @@ public class MatomoTracker {
         return tracker;
     }
 
+    private void verifyLicense(boolean productionMode) {
+        if (!productionMode) {
+            LicenseChecker.checkLicense(PROJECT_NAME, PROJECT_VERSION);
+            UsageStatistics.markAsUsed(PROJECT_NAME, PROJECT_VERSION);
+        }
+    }
+    
     private void init() {
+    	verifyLicense(ui.getSession().getConfiguration().isProductionMode());
+    	
         TrackerConfiguration config = createConfig(ui);
 
         if (config == null) {
