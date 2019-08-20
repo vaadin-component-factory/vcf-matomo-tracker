@@ -136,12 +136,11 @@ public class MatomoTracker {
         pageViewPrefix = config.getPageViewPrefix();
 
        	ui.getPage().addJavaScript(trackingUrl+"/matomo.js", LoadMode.EAGER);
-        
+       	
         ui.getPage()
                 .executeJavaScript(
                 		"Matomo.addTracker();"
                 		+ "var _paq = window._paq || [];"
-                		+ "_paq.push(['trackPageView']);"
                 		+ "_paq.push(['enableLinkTracking']);"
                 		+ "var u='"+ trackingUrl +"/';"
                 		+ "_paq.push(['setTrackerUrl', u+'matomo.php']);"
@@ -239,7 +238,6 @@ public class MatomoTracker {
                 if (!inited) {
                     init();
                 }
-
                 pendingActions.forEach(this::sendAction);
                 pendingActions.clear();
             });

@@ -5,7 +5,7 @@
     <artifactId>matomotracker</artifactId>
     <packaging>jar</packaging>
     <name>MatomoTracker</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <!-- No parent specified to be able to make standalone component for Directory -->
 
 

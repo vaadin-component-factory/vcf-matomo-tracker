@@ -9,7 +9,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.RouterLayout;
 import com.vaadin.flow.router.RouterLink;
 
-@EnableMatomoTracker(value = "https://kemira-intra-test.matomo.cloud", siteId = "4")
+@EnableMatomoTracker(value = "url to your matomo site", siteId = "1")
 public class MainLayout extends VerticalLayout implements RouterLayout, TrackerConfigurator {
     public MainLayout() {
         add(new HorizontalLayout(new RouterLink("Main view", MainView.class),
@@ -18,6 +18,7 @@ public class MainLayout extends VerticalLayout implements RouterLayout, TrackerC
 
     @Override
     public void configureTracker(TrackerConfiguration configuration) {
-    	// configuration.setPageViewPrefix(pageViewPrefix)
+        // configuration.setPageViewPrefix(pageViewPrefix)
     }
+    
 }

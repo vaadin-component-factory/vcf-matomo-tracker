@@ -13,8 +13,8 @@ import com.vaadin.flow.router.Route;
 public class MainView extends VerticalLayout {
     public MainView() {
         add(new Text("Main view"), new Button("Send an event", click -> {
-            MatomoTracker.getCurrent().sendEvent("Examples",
-                    "Event button");
+            MatomoTracker.getCurrent().sendEvent("Examples", "Event button");
         }));
     }
+    
 }
