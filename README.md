@@ -19,6 +19,4 @@ To see the demo, navigate to http://localhost:8080/
 
 ## License & Author
 
-This Add-on is distributed under Commercial Vaadin Add-on License version 3 (CVALv3). For license terms, see LICENSE.txt.
-
-MatomoTracker add-on is written by Vaadin Ltd.
+Apache 2 license
