@@ -260,7 +260,6 @@ public class MatomoTracker {
         matomo("setCustomUrl", location);
         if (title != null) matomo("setDocumentTitle", title);
         matomo("deleteCustomVariables","page");
-        matomo("setGenerationTimeMs",0);
         matomo("trackPageView");
     }
 
